@@ -17,10 +17,21 @@ print type(xml)
 print xml.name
 
 ########################### Root node (the catalog) ############################
-
+# Equivalent statements
 root = xml.findChild("catalog")
+root = xml.catalog
 
 # "catalog"
 print root.name
-print root.fetchText()
 
+######################## Book titles (all 'title' tags) ########################
+titles = root.findAll(name="title")
+# [u'title', u'title', u'title', u'title', u'title']
+print [tag.name for tag in titles]
+# [u"XML Developer's Guide", u'Midnight Rain', u'Maeve Ascendant', u"Oberon's Legacy", u'The Sundered Grail']
+print [tag.text for tag in titles]
+
+books = root.findAll(name="book")
+
+# [[(u'id', u'bk101')], [(u'id', u'bk102')], [(u'id', u'bk103')], [(u'id', u'bk104')], [(u'id', u'bk105')]]
+print [tag.attrs for tag in books]
