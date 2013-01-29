@@ -1,4 +1,4 @@
-beautifulsoup_tutorial
-======================
+BeautifoulSoup Tutorial
+=======================
 
-Hands-on tutorial for Python's BeautifulSoup
+Self contained Hands-on tutorial for Python's BeautifulSoup XML parser.
